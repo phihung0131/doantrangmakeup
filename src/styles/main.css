@@ -6,24 +6,24 @@
 @tailwind utilities;
 
 /* Import font từ Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 /* Định nghĩa biến CSS cho Playfair Display (dùng trong Tailwind) */
 :root {
   --color-primary: #ec4755;
   --color-secondary: #a12c34;
   --color-tertiaty: #99a0a3;
-  --font-playfair: 'Playfair Display', serif;
+  --font-playfair: "Playfair Display", serif;
 }
 
 /* Class cho Be Vietnam Pro (font mặc định) */
 .font-be-vietnam-pro {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 /* Giữ các style hiện có */
-a { 
+a {
   @apply text-red-700;
 }
 

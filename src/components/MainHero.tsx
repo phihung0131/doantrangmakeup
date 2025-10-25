@@ -14,8 +14,10 @@ const MainHero = () => {
           </span>
         </h1>
         <p className="mt-3 text-base text-white lg:text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-          Tự tin tỏa sáng với <strong>Đoan Trang Makeup</strong> – nơi vẻ đẹp của bạn được chăm chút từ từng nét cọ.
-          Chúng tôi mang đến phong cách trang điểm hiện đại, nhẹ nhàng, giúp bạn nổi bật nhưng vẫn giữ được nét riêng.
+          Tự tin tỏa sáng với <strong>Đoan Trang Makeup</strong> – nơi vẻ đẹp
+          của bạn được chăm chút từ từng nét cọ. Chúng tôi mang đến phong cách
+          trang điểm hiện đại, nhẹ nhàng, giúp bạn nổi bật nhưng vẫn giữ được
+          nét riêng.
         </p>
         <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
           <div className="rounded-md shadow">

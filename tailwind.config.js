@@ -5,7 +5,7 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-  important: true, 
+  important: true,
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -46,9 +46,8 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-playfair)'], // Dùng cho tiêu đề với class "font-display"
       },
-      
     },
   },
   variants: {},
   plugins: [],
-}
+};
