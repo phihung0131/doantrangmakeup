@@ -1,9 +1,6 @@
 {
   // Configuration for JavaScript files
-  "extends": [
-    "airbnb-base",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -15,14 +12,8 @@
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": [
-        "**/*.ts",
-        "**/*.tsx"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "unused-imports"
-      ],
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "unused-imports"],
       "extends": [
         "airbnb-typescript",
         "next/core-web-vitals",

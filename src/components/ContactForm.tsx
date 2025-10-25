@@ -7,12 +7,27 @@ const { Option } = Select;
 const ContactForm = () => {
   const [form] = Form.useForm();
 
-  const handleSubmit = (values: any) => {
-    console.log('Form Values:', values);
-    message.success(
-      'Gửi thông tin thành công! 💖 Chúng tôi sẽ liên hệ sớm nhất.'
-    );
-    form.resetFields();
+  const handleSubmit = async (values: any) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        message.success(
+          '💖 Gửi thông tin thành công! Chúng tôi sẽ liên hệ sớm nhất.'
+        );
+        form.resetFields();
+      } else {
+        message.error('⚠️ Gửi thất bại, vui lòng thử lại sau.');
+      }
+    } catch (error) {
+      message.error('❌ Kết nối Telegram thất bại, vui lòng thử lại sau.');
+    }
   };
 
   return (
