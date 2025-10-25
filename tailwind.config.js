@@ -2,6 +2,10 @@ module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
+  corePlugins: {
+    preflight: false,
+  },
+  important: true, 
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -39,8 +43,12 @@ module.exports = {
           },
         },
       },
+      fontFamily: {
+        display: ['var(--font-playfair)'], // Dùng cho tiêu đề với class "font-display"
+      },
+      
     },
   },
   variants: {},
   plugins: [],
-};
+}
