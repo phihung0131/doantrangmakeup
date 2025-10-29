@@ -2,10 +2,7 @@ import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 import { motion, useAnimation } from 'framer-motion';
 
-function useOnScreen(
-  ref: MutableRefObject<HTMLDivElement | null>,
-  rootMargin = '0px'
-) {
+function useOnScreen(ref: MutableRefObject<HTMLDivElement | null>, rootMargin = '0px') {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {

@@ -3,11 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 /**
  * Hàm gửi tin nhắn Telegram có retry và timeout
  */
-async function sendTelegramMessage(
-  url: string,
-  body: any,
-  retry = 2
-): Promise<any> {
+async function sendTelegramMessage(url: string, body: any, retry = 2): Promise<any> {
   try {
     const res = await fetch(url, {
       method: 'POST',
@@ -29,14 +25,9 @@ async function sendTelegramMessage(
   }
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST')
-    return res
-      .status(405)
-      .json({ success: false, message: 'Method not allowed' });
+    return res.status(405).json({ success: false, message: 'Method not allowed' });
 
   try {
     const { name, phone, service } = req.body;
@@ -45,9 +36,7 @@ export default async function handler(
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID!;
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-      throw new Error(
-        'Thiếu TELEGRAM_BOT_TOKEN hoặc TELEGRAM_CHAT_ID trong .env.local'
-      );
+      throw new Error('Thiếu TELEGRAM_BOT_TOKEN hoặc TELEGRAM_CHAT_ID trong .env.local');
     }
 
     let serviceLabel = 'Trang điểm ngoại cảnh'; // mặc định

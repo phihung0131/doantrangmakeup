@@ -5,6 +5,7 @@ import { AppProps } from 'next/app';
 import { beVietnamPro, playfair } from '@/lib/fonts';
 
 import '@/styles/main.css';
+import { AuthProvider } from '@/context/AuthContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ConfigProvider
@@ -15,9 +16,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       },
     }}
   >
-    <div className={`${beVietnamPro.className} ${playfair.variable}`}>
-      <Component {...pageProps} />
-    </div>
+    <AuthProvider>
+      <div className={`${beVietnamPro.className} ${playfair.variable}`}>
+        <Component {...pageProps} />
+      </div>
+    </AuthProvider>
   </ConfigProvider>
 );
 

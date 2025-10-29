@@ -7,10 +7,7 @@ const About = () => {
   const { logo, name: companyName } = company;
 
   return (
-    <div
-      id="about"
-      className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12"
-    >
+    <div id="about" className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12">
       <div className="flex flex-col items-center justify-center">
         <div>
           <img src={logo} alt={companyName} className="w-16 h-16" />
@@ -42,9 +39,7 @@ const About = () => {
               />
               <circle fill="white" cx="14.83" cy="8.17" r="0.58" />
             </svg>
-            <span className="text-sm text-gray-800 dark:text-white">
-              @doantrangmakeup
-            </span>
+            <span className="text-sm text-gray-800 dark:text-white">@doantrangmakeup</span>
           </a>
 
           <a
@@ -63,9 +58,7 @@ const About = () => {
             >
               <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
             </svg>
-            <span className="text-sm text-gray-800 dark:text-white">
-              Hồ Nguyễn Đoan Trang
-            </span>
+            <span className="text-sm text-gray-800 dark:text-white">Hồ Nguyễn Đoan Trang</span>
           </a>
         </div>
       </div>

@@ -18,9 +18,7 @@ const ContactForm = () => {
       const result = await res.json();
 
       if (result.success) {
-        message.success(
-          '💖 Gửi thông tin thành công! Chúng tôi sẽ liên hệ sớm nhất.'
-        );
+        message.success('💖 Gửi thông tin thành công! Chúng tôi sẽ liên hệ sớm nhất.');
         form.resetFields();
       } else {
         message.error('⚠️ Gửi thất bại, vui lòng thử lại sau.');
@@ -31,7 +29,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-6xl max-lg:max-w-3xl mx-auto bg-white p-4">
+    <div className="max-w-6xl mx-auto bg-white p-4">
       <h2
         className="w-full my-2 text-5xl font-bold leading-tight text-center font-display"
         id="contact"
@@ -39,17 +37,11 @@ const ContactForm = () => {
         Liên hệ Đoan Trang Makeup
       </h2>
       <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
-        Đặt lịch trang điểm hoặc tư vấn phong cách phù hợp với bạn. Chúng tôi
-        luôn sẵn sàng hỗ trợ!
+        Đặt lịch trang điểm hoặc tư vấn phong cách phù hợp với bạn. Chúng tôi luôn sẵn sàng hỗ trợ!
       </p>
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative overflow-hidden p-4 sm:p-6 lg:p-8 [box-shadow:0_2px_10px_-3px_rgba(236,71,85,0.3)] before:hidden lg:before:block before:absolute before:right-0 before:w-[300px] before:bg-primary before:h-full rounded-2xl">
-        <div>
-          <Form
-            form={form}
-            onFinish={handleSubmit}
-            className="mt-8"
-            layout="vertical"
-          >
+      <div className="flex justify-center p-4 sm:p-6 lg:p-10 rounded-2xl">
+        <div className="w-full max-w-3xl">
+          <Form form={form} onFinish={handleSubmit} className="w-full" layout="vertical">
             <Form.Item
               name="name"
               rules={[{ required: true, message: 'Vui lòng nhập họ và tên' }]}
@@ -159,7 +151,7 @@ const ContactForm = () => {
           </ul>
         </div>
 
-        <div className="z-10 relative h-64 sm:h-80 lg:h-full lg:min-h-[400px] rounded-xl overflow-hidden shadow-md">
+        {/* <div className="z-10 relative h-64 sm:h-80 lg:h-full lg:min-h-[400px] rounded-xl overflow-hidden shadow-md">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3906.02708812024!2d108.39820127508263!3d11.76314264021917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317140ecff3e5d07%3A0x4273d99cc1159584!2zxJDhuqFpIEzDvSBU4buVbmcgSOG7o3AgTOG7hyBQaMaw4budbmc!5e0!3m2!1svi!2s!4v1761388514497!5m2!1svi!2s"
             className="left-0 top-0 h-full w-full"
@@ -167,10 +159,10 @@ const ContactForm = () => {
             allowFullScreen
             title="Bản đồ địa chỉ"
           ></iframe>
-        </div>
+        </div> */}
       </div>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         .custom-select :global(.ant-select-selector) {
           padding: 12px 8px !important;
           background: white !important;
@@ -191,7 +183,7 @@ const ContactForm = () => {
         .custom-select :global(.ant-select-selection-placeholder) {
           color: var(--color-tertiary) !important;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { scroller } from 'react-scroll';
 
 import About from '@/components/About';
 import Analytics from '@/components/Analytics';
@@ -11,6 +13,23 @@ import MainHeroImage from '@/components/MainHeroImage';
 import Product from '@/components/Product';
 
 const App = () => {
+  const router = useRouter();
+
+  // Scroll đến section khi có hash trong URL
+  useEffect(() => {
+    const hash = router.asPath.split('#')[1];
+    if (hash) {
+      // Đợi DOM render và LazyShow load xong rồi mới scroll
+      setTimeout(() => {
+        scroller.scrollTo(hash, {
+          duration: 1000,
+          smooth: true,
+          offset: -80, // Offset để không bị che bởi header (điều chỉnh theo chiều cao header của bạn)
+        });
+      }, 300);
+    }
+  }, [router.asPath]);
+
   return (
     <div className={`bg-background grid gap-y-16 overflow-hidden`}>
       <div className="relative bg-background min-h-screen lg:min-h-0">
@@ -26,18 +45,23 @@ const App = () => {
         </div>
       </div>
       <Canvas />
+
+      {/* Services Section */}
       <LazyShow>
-        <>
+        <div id="services">
           <Product />
           <Canvas />
-        </>
+        </div>
       </LazyShow>
+
+      {/* Contact Section */}
       <LazyShow>
-        <>
+        <div id="contact">
           <ContactForm />
           <Canvas />
-        </>
+        </div>
       </LazyShow>
+
       <LazyShow>
         <About />
       </LazyShow>
